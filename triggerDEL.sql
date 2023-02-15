@@ -1,0 +1,14 @@
+CREATE TRIGGER ALU_DEL_alumnos_logs
+BEFORE DELETE ON alumnos
+FOR EACH ROW
+INSERT INTO logs VALUES (NULL, "Alumnos", "Delete", NOW(), USER(), DATABASE(), VERSION());
+
+CREATE TRIGGER COM_DEL_comisiones_logs
+BEFORE DELETE ON comisiones
+FOR EACH ROW
+INSERT INTO logs VALUES (NULL, "Comisiones", "Delete", NOW(), USER(), DATABASE(), VERSION());
+
+CREATE TRIGGER PROF_DEL_profesores_logs
+BEFORE DELETE ON profesores
+FOR EACH ROW
+INSERT INTO logs VALUES (NULL, "Profesores", "Delete", NOW(), USER(), DATABASE(), VERSION());

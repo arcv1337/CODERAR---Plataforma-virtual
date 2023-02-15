@@ -1,0 +1,14 @@
+CREATE TRIGGER ALU_INS_alumnos_logs
+BEFORE INSERT ON alumnos
+FOR EACH ROW
+INSERT INTO logs VALUES (NULL, "Alumnos", "Insert", NOW(), USER(), DATABASE(), VERSION());
+
+CREATE TRIGGER COM_INS_comisiones_logs
+BEFORE INSERT ON comisiones
+FOR EACH ROW
+INSERT INTO logs VALUES (NULL, "Comisiones", "Insert", NOW(), USER(), DATABASE(), VERSION());
+
+CREATE TRIGGER PROF_INS_profesores_logs
+BEFORE INSERT ON profesores
+FOR EACH ROW
+INSERT INTO logs VALUES (NULL, "Profesores", "Insert", NOW(), USER(), DATABASE(), VERSION());
